@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>政府公告</title>
+		<script src="js/jq-1.11.1.js" language="javascript"></script>
+		<script src="js/common.js" language="javascript"></script>
+		<script src="js/jquery-ui-1.10.4.min.js" language="javascript"></script>
+		<script src="js/bootstrap.min.js" language="javascript"></script>
+		<link href="css/jquery_ui.css" rel="stylesheet">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/web_news_list.css" rel="stylesheet">
+		<script src="js/web_news_list.js" language="javascript"></script>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span
+					 class="icon-bar"></span></button> <a class="navbar-brand" href="#">彼思瀚默</a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active">
+						<a href="news_list.html">政府公告</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col-md-12 column">
+					<h3>
+						政府公告
+					</h3>
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<label for="inputEmail3" class="col-sm-2 control-label">政府部门：</label>
+							<div class="col-sm-10">
+								<select class="area_list form-control"></select>
+								<select class="gov_list form-control"></select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputPassword3" class="col-sm-2 control-label">发布时间：</label>
+							<div class="col-sm-10">
+								<input type="text" id="start_time" class="form-control" value="">
+								至
+								<input type="text" id="end_time" class="form-control" value="">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputPassword3" class="col-sm-2 control-label">关键字：</label>
+							<div class="col-sm-10">
+								<input class="form-control" type="text" id="key" value="">
+								<input type="hidden" id="gov_id" value="">
+								<input type="hidden" id="page" value="1">
+								<button type="button" class="btn btn-success search">搜索</button>
+							</div>
+						</div>
+					</form>
+					<table class="table table-hover">
+						<thead>
+							<tr>
+								<th>
+									编号
+								</th>
+								<th class="title_th">
+									标题
+								</th>
+								<th>
+									发布部门
+								</th>
+								<th>
+									发布时间
+								</th>
+							</tr>
+						</thead>
+						<tbody class="news_list"></tbody>
+					</table>
+					<ul class="pagination"></ul>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

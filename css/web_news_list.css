@@ -1,0 +1,65 @@
+input[type=checkbox]{
+	margin: 4px 5px 0px 0px;
+}
+
+.title_th {
+	width: 60%;
+}
+.news_list tr.top a{
+	color: red;
+}
+
+.control-label {
+	width: 85px;
+	text-align: left;
+	padding: 7px 0 0 5px;
+}
+
+.form-horizontal .area_list {
+	display: inline-block;
+	width: 20%;
+	float: left;
+}
+
+.form-horizontal .a2_select {
+	display: inline-block;
+	width: 25%;
+	float: left;
+	margin:  0 0 0 10px;
+}
+
+.form-horizontal .a3_select {
+	display: inline-block;
+	width: 20%;
+	float: left;
+	margin:  0 0 0 10px;
+}
+
+.form-horizontal .gov_list {
+	display: inline-block;
+	width: 100%;
+	float: left;
+	margin: 10px 0 0 0;
+}
+
+.form-horizontal #start_time {
+	display: inline-block;
+	width: 30%;
+	margin: 0 10px 0 0;
+}
+
+.form-horizontal #end_time {
+	display: inline-block;
+	width: 30%;
+	margin: 0 0 0 10px;
+}
+
+.form-horizontal #key {
+	display: inline-block;
+	width: 80%;
+	margin: 0 10px 0 0;
+}
+
+.pagination {
+	float: right;
+}

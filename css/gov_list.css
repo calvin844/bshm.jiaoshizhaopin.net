@@ -1,0 +1,65 @@
+hr {
+	display: block;
+	height: 2px;
+	background-color: #333;
+	margin: 50px 0px 50px 0px;
+}
+
+.a1_select {
+	margin: 5px;
+}
+
+.a2_select {
+	margin: 5px;
+}
+
+.a3_select {
+	margin: 5px;
+}
+
+ul.gov_list {
+	padding: 0px 0px 0px 0px;
+}
+
+ul.gov_list .item_id {
+	display: inline-block;
+	margin: 0px 5px  0px 0px;
+}
+
+ul.gov_list li {
+	padding: 20px 0px 20px 0px;
+	list-style: none;
+}
+
+ul.gov_list .gov_name {
+	font-weight: bold;
+	display: inline-block;
+	width: 90%;
+}
+
+ul.gov_list label {
+	font-weight: normal;
+}
+
+ul.gov_list .a1_select {
+	display: inline-block;
+	width: 100Px;
+}
+
+ul.gov_list .a2_select {
+	display: inline-block;
+	width: 100Px;
+}
+
+ul.gov_list .a3_select {
+	display: inline-block;
+	width: 100Px;
+}
+
+ul.gov_list .btn {
+	margin: -5px 0 0 0;
+}
+
+.pagination {
+	float: right;
+}
