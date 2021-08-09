@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
 	checkLonin();
 	$("#start_time").datepicker({
 		defaultDate: new Date()
@@ -23,7 +23,7 @@ $(document).ready(function() {
 	}
 	$('#page').val(page);
 
-	$('.search').click(function() {
+	$('.search').click(function () {
 		gov_id = $('.gov_list').val();
 		start_time = $('#start_time').val();
 		end_time = $('#end_time').val();
@@ -32,7 +32,7 @@ $(document).ready(function() {
 		get_news_list(gov_id, start_time, end_time, key, page);
 
 	})
-	$('.pagination').on('click', 'a', function() {
+	$('.pagination').on('click', 'a', function () {
 		gov_id = $('.gov_list').val();
 		start_time = $('#start_time').val();
 		end_time = $('#end_time').val();
@@ -47,23 +47,23 @@ $(document).ready(function() {
 	});
 	var a1_option_str = "<option value='-1'>不限</option>";
 	a1_option_str += "<option value='0'>全国</option>";
-	$.each(parent_area_data, function(a, a1_item) {
+	$.each(parent_area_data, function (a, a1_item) {
 		a1_option_str += '<option value="' + a1_item.region_code + '">' + a1_item.region_name + '</option>';
 	})
 	$('.area_list').html(a1_option_str);
 
-	$('.area_list').change(function() {
+	$('.area_list').change(function () {
 		var area_id = $(this).val();
 		var a2_option_str = "";
 		$(this).parent().find('.a2_select').remove()
 		$(this).parent().find('.a3_select').remove()
-		if(area_id > 0){
+		if (area_id > 0) {
 			var area2_data = getData('area/get_area_list_by_pid', 'get', {
 				pid: area_id
 			});
 			a2_option_str += "<select class='a2_select form-control'>";
 			a2_option_str += '<option value="' + area_id + '">省级</option>';
-			$.each(area2_data, function(a, a2_item) {
+			$.each(area2_data, function (a, a2_item) {
 				a2_option_str += '<option value="' + a2_item.region_code + '">' + a2_item.region_name + '</option>';
 			})
 			a2_option_str += '</select>';
@@ -72,14 +72,14 @@ $(document).ready(function() {
 		get_gov_list(area_id)
 	})
 
-	$('body').on('change', '.a2_select', function() {
+	$('body').on('change', '.a2_select', function () {
 		var area_id = $(this).val();
 		var area3_data = getData('area/get_area_list_by_pid', 'get', {
 			pid: area_id
 		});
 		var a3_option_str = "<select class='a3_select form-control'>";
 		a3_option_str += '<option value="' + area_id + '">市级</option>';
-		$.each(area3_data, function(a, a3_item) {
+		$.each(area3_data, function (a, a3_item) {
 			a3_option_str += '<option value="' + a3_item.region_code + '">' + a3_item.region_name + '</option>';
 		})
 		a3_option_str += '</select>';
@@ -88,22 +88,22 @@ $(document).ready(function() {
 		get_gov_list(area_id)
 	})
 
-	$('body').on('change', '.a3_select', function() {
+	$('body').on('change', '.a3_select', function () {
 		var area_id = $(this).val();
 		get_gov_list(area_id)
 	})
 
 	get_gov_list(-1)
 	get_news_list(gov_id, start_time, end_time, key, page)
-	$('#all_checkbox').click(function() {
+	$('#all_checkbox').click(function () {
 		var all_checked = $(this).prop('checked');
 		$('table input:checkbox').prop('checked', all_checked)
 	})
-	$('.all_del').click(function() {
+	$('.all_del').click(function () {
 		if (confirm('确定删除所选公告？')) {
 			var c_arr = $('table input:checkbox:checked');
 			var arr = new Array();
-			$('table input:checkbox:checked').each(function() {
+			$('table input:checkbox:checked').each(function () {
 				arr.push($(this).val())
 			})
 			let del_result = getData('news/del_news', 'post', {
@@ -118,10 +118,10 @@ $(document).ready(function() {
 			$('#checked_num').html('已选0个')
 		}
 	})
-	$('.all_top').click(function() {
+	$('.all_top').click(function () {
 		var c_arr = $('table input:checkbox:checked');
 		var arr = new Array();
-		$('table input:checkbox:checked').each(function() {
+		$('table input:checkbox:checked').each(function () {
 			arr.push($(this).val())
 		})
 		let top_result = getData('news/top_news', 'post', {
@@ -139,7 +139,7 @@ $(document).ready(function() {
 		alert('设置成功');
 		$('#checked_num').html('已选0个')
 	})
-	$('table').on('click','input[type=checkbox]',function() {
+	$('table').on('click', 'input[type=checkbox]', function () {
 		let c_num = $('table tr td input:checkbox:checked').length;
 		$('#checked_num').html('已选' + c_num + '个')
 	})
@@ -155,7 +155,7 @@ function get_news_list(gov_id, start_time, end_time, key, page) {
 		page: page
 	});
 	var page_str = li_str = ""
-	$.each(news_list.list, function(i, item) {
+	$.each(news_list.list, function (i, item) {
 		let top_str = ''
 		if (item.top == 1) {
 			top_str = 'top'
@@ -183,7 +183,11 @@ function get_news_list(gov_id, start_time, end_time, key, page) {
 			page_str += "<li><a data-page='" + i + "' href='javascript:void(0);'>" + i + "</a></li>";
 		}
 	}
+<<<<<<< HEAD
 	page_str += "<li><a data-page='" + news_list.page.totalpage + "' href='javascript:void(0);'>尾页</a></li>";
+=======
+	page_str += "<li><a data-page='" + news_list.page.totalpage + "' href='javascript:void(0);'>末页：" + news_list.page.totalpage + "</a></li>";
+>>>>>>> a0f3deade450fae075af2ac3caf27cfab489edfd
 	$('.pagination').html(page_str);
 }
 
@@ -193,7 +197,7 @@ function get_gov_list(area_id) {
 		area_id: area_id
 	});
 	select_str = "<option value=''>不限</option>";
-	$.each(gov_data, function(i, item) {
+	$.each(gov_data, function (i, item) {
 		select_str += "<option value='" + item.id + "'>" + item.gov_name + "</option>";
 	});
 	$('.gov_list').html(select_str);
