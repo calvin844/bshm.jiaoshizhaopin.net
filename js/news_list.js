@@ -183,11 +183,7 @@ function get_news_list(gov_id, start_time, end_time, key, page) {
 			page_str += "<li><a data-page='" + i + "' href='javascript:void(0);'>" + i + "</a></li>";
 		}
 	}
-<<<<<<< HEAD
 	page_str += "<li><a data-page='" + news_list.page.totalpage + "' href='javascript:void(0);'>尾页</a></li>";
-=======
-	page_str += "<li><a data-page='" + news_list.page.totalpage + "' href='javascript:void(0);'>末页：" + news_list.page.totalpage + "</a></li>";
->>>>>>> a0f3deade450fae075af2ac3caf27cfab489edfd
 	$('.pagination').html(page_str);
 }
 
