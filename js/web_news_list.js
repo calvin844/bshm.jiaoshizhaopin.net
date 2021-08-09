@@ -120,6 +120,8 @@ function get_news_list(gov_id, start_time, end_time, key, page) {
 	$('#end_time').val(news_list.option.end_time);
 	$('#key').val(news_list.option.key);
 
+	
+	page_str += "<li><a data-page='1' href='javascript:void(0);'>首页</a></li>";
 	for (i = news_list.page.start_page; i <= news_list.page.end_page; i++) {
 		if (i == news_list.page.now_page) {
 			page_str += "<li class='active'><span>" + i + "</span></li>";
@@ -127,6 +129,7 @@ function get_news_list(gov_id, start_time, end_time, key, page) {
 			page_str += "<li><a data-page='" + i + "' href='javascript:void(0);'>" + i + "</a></li>";
 		}
 	}
+	page_str += "<li><a data-page='" + news_list.page.totalpage + "' href='javascript:void(0);'>尾页</a></li>";
 	$('.pagination').html(page_str);
 }
 
